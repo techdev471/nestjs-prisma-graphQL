@@ -1,0 +1,39 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Points {
+  lat: Float!
+  lng: Float!
+}
+
+type Viewport {
+  northeast: Points!
+  southwest: Points!
+}
+
+type Geometry {
+  location: Points!
+  viewport: Viewport!
+}
+
+type Places {
+  name: String!
+  business_status: String!
+  formatted_address: String!
+  place_id: String!
+  price_level: Int!
+  geometry: Geometry!
+  rating: Float!
+  created_at: DateTime!
+  updated_at: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  getPlace(place_id: String!): Places!
+}
